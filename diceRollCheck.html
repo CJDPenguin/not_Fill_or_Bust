@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll check</title>
+</head>
+<body>
+    <h1>Let's see your number</h1>
+    <p>You rolled a: <span id="rollValue">Oops</span></p>
+    <button type="button" id="roll">Roll Again!</button>
+    <script src="diceRoll.js"></script>
+    <script>
+        document.querySelector('#roll').addEventListener('click',diceRoll)
+    </script>
+</body>
+</html>
