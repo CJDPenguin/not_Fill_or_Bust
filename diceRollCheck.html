@@ -6,11 +6,37 @@
 </head>
 <body>
     <h1>Let's see your number</h1>
-    <p>You rolled a: <span id="rollValue">Oops</span></p>
-    <button type="button" id="roll">Roll Again!</button>
+    <p>You rolled a: <span id="rollOne" class="roll"></span></p>
+    <p>You rolled a: <span id="rollTwo" class="roll"></span></p>
+    <p>You rolled a: <span id="rollThree" class="roll"></span></p>
+    <p>You rolled a: <span id="rollFour" class="roll"></span></p>
+    <p>You rolled a: <span id="rollFive" class="roll"></span></p>
+    <p>You rolled a: <span id="rollSix" class="roll"></span></p>
+    <p>For a score of: <span id="score" class="roll"></span></p>
+    <button type="button" id="rollDice">Roll the Dice!</button>
     <script src="diceRoll.js"></script>
     <script>
-        document.querySelector('#roll').addEventListener('click',diceRoll)
+        document.querySelector('#rollDice').addEventListener('click',
+            () => {
+                document.querySelector('#rollOne').innerHTML = diceRoll().toString();
+                document.querySelector('#rollTwo').innerHTML = diceRoll().toString();
+                document.querySelector('#rollThree').innerHTML = diceRoll().toString();
+                document.querySelector('#rollFour').innerHTML = diceRoll().toString();
+                document.querySelector('#rollFive').innerHTML = diceRoll().toString();
+                document.querySelector('#rollSix').innerHTML = diceRoll().toString();
+
+                let score = 0
+                const rolls = document.querySelectorAll('.roll');
+                console.log(parseInt(rolls[0].innerHTML) === 5 || parseInt(rolls[0].innerHTML) === 1);
+                rolls.forEach(roll => {
+                    if (parseInt(roll.innerHTML) === 1) {
+                        score += 100;
+                    } else if (parseInt(roll.innerHTML) === 5) {
+                        score += 50;
+                    }
+                })
+                document.querySelector('#score').innerHTML = score;
+            })
     </script>
 </body>
 </html>
