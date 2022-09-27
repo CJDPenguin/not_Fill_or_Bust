@@ -18,37 +18,11 @@
     <script>
         document.querySelector('#rollDice').addEventListener('click', diceRoll);
     </script>
-<!--    <script>-->
-<!--        document.querySelector('#rollDice').addEventListener('click', () => {-->
-<!--            document.querySelectorAll('.keep').forEach( question => {-->
-<!--                if (question.checked) {-->
-<!--                    console.log(question.value);-->
-<!--                }-->
-<!--            })-->
-<!--        })-->
-<!--    </script>-->
-<!--    <script>-->
-<!--        document.querySelector('#rollDice').addEventListener('click',-->
-<!--            () => {-->
-<!--                document.querySelector('#rollOne').innerHTML = diceRoll().toString();-->
-<!--                document.querySelector('#rollTwo').innerHTML = diceRoll().toString();-->
-<!--                document.querySelector('#rollThree').innerHTML = diceRoll().toString();-->
-<!--                document.querySelector('#rollFour').innerHTML = diceRoll().toString();-->
-<!--                document.querySelector('#rollFive').innerHTML = diceRoll().toString();-->
-<!--                document.querySelector('#rollSix').innerHTML = diceRoll().toString();-->
-
-<!--                let score = 0-->
-<!--                const rolls = document.querySelectorAll('.roll');-->
-<!--                console.log(parseInt(rolls[0].innerHTML) === 5 || parseInt(rolls[0].innerHTML) === 1);-->
-<!--                rolls.forEach(roll => {-->
-<!--                    if (parseInt(roll.innerHTML) === 1) {-->
-<!--                        score += 100;-->
-<!--                    } else if (parseInt(roll.innerHTML) === 5) {-->
-<!--                        score += 50;-->
-<!--                    }-->
-<!--                })-->
-<!--                document.querySelector('#score').innerHTML = score;-->
-<!--            })-->
-<!--    </script>-->
+    <script src="cardDeck.js"></script>
+    <script>
+        let d = new Deck();
+        d.createDeck();
+        console.log(d);
+    </script>
 </body>
 </html>
